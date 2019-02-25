@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" ></script>
+</head>
+<body style="background: #f3f3f3">
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}">学生管理</a>
+        </div>
+    </div>
+</nav>
+<div>
+    <ul class="nav  nav-stacked" style="width: 200px;margin-left: 100px;height: 500px;background:#ffffff;float: left">
+        <li role="presentation" class="active"><a href="{{ url_for('index') }}">首页</a></li>
+        <li role="presentation"><a href="{{ url_for('mange') }}">学生管理</a></li>
+        <li role="presentation"><a href="{{ url_for('add') }}">添加学生</a></li>
+    </ul>
+        <div class="form_table" style="background:#ffffff;width: 500px;margin-left: 200px;float: left">
+            <h3 style="text-align: center">添加学生</h3>
+            <form action="" method="post">
+                <div class="form-container">
+                    <div class="form-group">
+                        <input name="sid" class="form-control" type="text" placeholder="学号"
+                               style="width: 200px ;margin: auto">
+                    </div>
+                    <div class="form-group">
+                        <input name="sname" class="form-control" type="text" placeholder="姓名"
+                               style="width: 200px;margin: auto">
+                    </div>
+                    <div class="form-group">
+                        <input name="szy" class="form-control" type="text" placeholder="专业"
+                               style="width: 200px;margin: auto">
+                    </div>
+                    <div class="form-group">
+                        <input name="sxy" class="form-control" type="text" placeholder="学院"
+                               style="width: 200px;margin: auto">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block active" style="width: 200px;margin: auto"
+                                type="submit" onclick="alert('添加成功')">添加
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>
+</body>
+</html>

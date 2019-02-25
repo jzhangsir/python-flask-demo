@@ -1,0 +1,5 @@
+dbhost = 'localhost:3306'
+dbuser = 'root'
+dbpass = '123456789'
+dbname = 'student'
+DB_URI = 'mysql://' + dbuser + ':' + dbpass + '@' + dbhost + '/' + dbname + '?charset=utf8'

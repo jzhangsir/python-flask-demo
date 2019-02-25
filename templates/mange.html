@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" ></script>
+</head>
+<body style="background: #f3f3f3">
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}">学生管理</a>
+        </div>
+    </div>
+</nav>
+<div class="form-contain">
+    <ul class="nav  nav-stacked" style="width: 200px;margin-left: 100px;height: 500px;background:#ffffff;float: left">
+        <li role="presentation" class="active"><a href="{{ url_for('index') }}">首页</a></li>
+        <li role="presentation"><a href="{{ url_for('mange') }}">学生管理</a></li>
+        <li role="presentation"><a href="{{ url_for('add') }}">添加学生</a></li>
+    </ul>
+    <div class="form" style="background: #ffffff;width: 600px;float: left;margin-left: 200px">
+        <h3 style="text-align: center">学生管理</h3>
+        {% if stu %}
+            <table border="1px" class="table table-striped table-hover" style="width: 500px;margin: auto">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>专业</th>
+                    <th>学院</th>
+                    <th>删除</th>
+                    <th>修改</th>
+                </tr>
+                {% for p in stu %}
+                    <tr>
+                        <td>{{ p.studentid }}</td>
+                        <td>{{ p.studentname }}</td>
+                        <td>{{ p.subject }}</td>
+                        <td>{{ p.college }}</td>
+                        <td><a href="{{ url_for('delete',studentid=p.studentid) }}" >删除</a></td>
+                        <td>
+                            <a href="{{ url_for('update',studentid=p.studentid) }}">修改</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>
